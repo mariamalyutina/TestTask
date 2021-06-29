@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>OrderDocument.Db</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{52439a65-1c13-471a-8f33-1025931a9ec4}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>OrderDocument.Db</RootNamespace>
+    <AssemblyName>OrderDocument.Db</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="StoredProcedures\Storage" />
+    <Folder Include="StoredProcedures\Provider" />
+    <Folder Include="StoredProcedures\MeasureUnit" />
+    <Folder Include="StoredProcedures\SupplyContract" />
+    <Folder Include="StoredProcedures\Product" />
+    <Folder Include="StoredProcedures\OrderDocument" />
+    <Folder Include="StoredProcedures\OrderDocument_Product" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\OrderDocument.sql" />
+    <Build Include="Tables\Provider.sql" />
+    <Build Include="Tables\SupplyContract.sql" />
+    <Build Include="Tables\Storage.sql" />
+    <Build Include="Tables\Product.sql" />
+    <Build Include="Tables\MeasureUnits.sql" />
+    <Build Include="Tables\OrderDocument_Product.sql" />
+    <Build Include="StoredProcedures\Storage\Storage_SelectAll.sql" />
+    <Build Include="StoredProcedures\Storage\Storage_SelectById.sql" />
+    <Build Include="StoredProcedures\Provider\Provider_Insert.sql" />
+    <Build Include="StoredProcedures\Provider\Provider_SelectAll.sql" />
+    <Build Include="StoredProcedures\Provider\Provider_SelectById.sql" />
+    <Build Include="StoredProcedures\MeasureUnit\MeasureUnit_SelectAll.sql" />
+    <Build Include="StoredProcedures\SupplyContract\SupplyContract_Insert.sql" />
+    <Build Include="StoredProcedures\SupplyContract\SupplyContract_SelectByProviderID.sql" />
+    <Build Include="StoredProcedures\Product\Product_SelectAll.sql" />
+    <Build Include="StoredProcedures\Product\Product_SelectByID.sql" />
+    <Build Include="StoredProcedures\Product\Product_Insert.sql" />
+    <Build Include="StoredProcedures\OrderDocument\OrderDocument_Insert.sql" />
+    <Build Include="StoredProcedures\OrderDocument\OrderDocument_SelectAll.sql" />
+    <Build Include="StoredProcedures\OrderDocument\OrderDocument_SelectByID.sql" />
+    <Build Include="StoredProcedures\OrderDocument\OrderDocument_Update.sql" />
+    <Build Include="StoredProcedures\OrderDocument\OrderDocument_Delete.sql" />
+    <Build Include="StoredProcedures\OrderDocument_Product\OrderDocument_Product_Insert.sql" />
+    <Build Include="StoredProcedures\OrderDocument_Product\OrderDocument_Product_Delete.sql" />
+    <Build Include="StoredProcedures\OrderDocument\OrderDocument_SelectAllProducts.sql" />
+    <Build Include="StoredProcedures\OrderDocument_Product\OrderDocument_Product_Update.sql" />
+  </ItemGroup>
+</Project>

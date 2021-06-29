@@ -1,0 +1,9 @@
+﻿CREATE TABLE [Provider] (
+	Id int NOT NULL identity,
+	Name nvarchar(255) NOT NULL,
+  CONSTRAINT [PK_PROVIDER] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)

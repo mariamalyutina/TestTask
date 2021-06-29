@@ -1,0 +1,9 @@
+﻿CREATE TABLE [Storage] (
+	Id int NOT NULL Identity,
+	Name nvarchar(50) NOT NULL,
+  CONSTRAINT [PK_STORAGE] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)

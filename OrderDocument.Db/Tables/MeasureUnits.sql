@@ -1,0 +1,9 @@
+﻿CREATE TABLE [MeasureUnits] (
+	Id int NOT NULL Identity,
+	Name nvarchar(10) NOT NULL,
+  CONSTRAINT [PK_MEASUREUNITS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)

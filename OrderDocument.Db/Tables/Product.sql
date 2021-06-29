@@ -1,0 +1,21 @@
+﻿CREATE TABLE [Product] (
+	Id int NOT NULL Identity,
+	Name nvarchar(50) NOT NULL UNIQUE,
+	StockNumber nvarchar(30) NOT NULL UNIQUE,
+	MeasureUnitID int NOT NULL,
+	VatRate int NOT NULL,
+  CONSTRAINT [PK_PRODUCT] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+
+GO
+
+
+ALTER TABLE [Product] WITH CHECK ADD CONSTRAINT [Product_fk0] FOREIGN KEY ([MeasureUnitID]) REFERENCES [MeasureUnits]([Id])
+ON UPDATE NO ACTION
+GO
+ALTER TABLE [Product] CHECK CONSTRAINT [Product_fk0]
+GO
